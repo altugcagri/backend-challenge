@@ -1,0 +1,46 @@
+
+### GRADLE ###
+.gradle
+!gradle/wrapper/gradle-wrapper.jar
+gradlew
+gradlew.bat
+gradle
+/bin/
+
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+
+#Compiled sources#
+apps/AuthenticationServer/build/
+apps/AuthenticationServer/.idea/
+apps/AuthenticationServer/.gradle/
+*.jar
+logs/
+out/
+RdpSettings.rdp
+sample.txt
+
+installer/client-installer/Crspng-Client_Build_Output/
+source/config-sections/src/main/resources/crspng_certificates.crt
