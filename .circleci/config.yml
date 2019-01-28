@@ -39,16 +39,16 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
         
       - run:
-          name: Creating Dummy Artifacts
+          name: Creating Test Artifacts
           command: |
-            echo "my test-results directory" > ~/repo/artifact-1;
+            echo "my test-results directory" > ~/repo/test-results;
             mkdir ~/repo/test-results;
 
       # run tests!
       - run: gradle test
 
       - store_artifacts:
-          path: ~/repo
+          path: ~/repo/build/reports/tests
           destination: ~/repo/test-results
 
       - store_test_results:
