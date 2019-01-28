@@ -41,14 +41,13 @@ jobs:
       - run:
           name: Creating Test Artifacts
           command: |
-            echo "my test-results directory" > ~/repo/test-results;
             mkdir ~/repo/test-results;
 
       # run tests!
       - run: gradle test
 
       - store_artifacts:
-          path: ~/repo/build/reports/tests
+          path: ~/repo/build/reports/tests/test
           destination: ~/repo/test-results
 
       - store_test_results:
