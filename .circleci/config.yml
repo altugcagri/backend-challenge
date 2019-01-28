@@ -48,8 +48,8 @@ jobs:
       - run: gradle test
 
       - store_artifacts:
-          path: ~/repo/test-results
-          destination: test-results
+          path: ~/repo
+          destination: ~/repo/test-results
 
       - store_test_results:
           path: ~/repo/test-results
