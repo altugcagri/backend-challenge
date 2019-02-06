@@ -1,0 +1,79 @@
+swagger: '2.0'
+info:
+  description: In the Knapsack problem, one specifies the weights and values of a collection of items and the capacity of a knapsack, and is looking for a way to pack some of the items, up to the capacity constraint, to maximise the total value of the knapsack's content
+  version: 1.0.0
+  title: Knapsack Optimiser
+  contact:
+    email: altugcagri@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+paths:
+  /knapsack:
+    get:
+      summary: Solves the knapsack problem
+      operationId: getKnapsackSolution
+      description: Solves the knapsack problem for the given items and the weight of the bag
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: KnapsackRequest
+        description: Given knapsack capacity and items
+        schema:
+          $ref: '#/definitions/KnapsackRequest'
+      responses:
+        200:
+          description: Problem Solved
+          schema:
+            $ref: '#/definitions/KnapsackResponse'
+        400:
+          description: invalid input, object invalid
+        409:
+          description: an existing item already exists
+definitions:
+  KnapsackRequest:
+    type: object
+    required:
+    - knapsackCapacity
+    - items
+    properties:
+      knapsackCapacity:
+        type: integer
+        example: 123
+      items:
+        type: array
+        items:
+         $ref: '#/definitions/Item'
+  KnapsackResponse:
+    type: object
+    required:
+    - solution
+    - items
+    properties:
+      solution:
+        type: integer
+        example: 123
+  Item:
+    required:
+    - value
+    - weight
+    properties:
+      value:
+        type: integer
+        example: 1234
+      weight:
+        type: integer
+        example: 1234
+# host: localhost:8080
+# schemes:
+#  - http
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /altugcagri/test/1.0.0
+schemes:
+ - https
+ - http
